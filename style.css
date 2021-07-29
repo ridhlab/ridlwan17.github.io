@@ -24,6 +24,77 @@ section {
 .card-rounded {
   border-radius: 1rem;
 }
-#projects .card h3 {
+.projects .card .card-body h3 {
   font-size: 24px;
+}
+.card .overlay:target {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: 0.3s;
+  z-index: 9999;
+}
+.card .overlay img {
+  width: 0;
+}
+.card .overlay:target img {
+  width: 700px;
+}
+.card .overlay {
+  position: absolute;
+}
+.card .overlay h3,
+.card .overlay i {
+  opacity: 0;
+}
+.card .overlay:target h3 {
+  opacity: 100%;
+}
+.card .overlay:target .image-full i {
+  opacity: 100%;
+  color: white;
+  display: block;
+  transform: scale(3);
+  padding-top: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.card .overlay:target .image-full {
+  position: relative;
+  padding-top: 4rem;
+  width: 700px;
+  margin: auto;
+}
+.card .overlay:target .image-full {
+  animation: zoom-fade 0.3s;
+}
+.card .overlay:target h3 {
+  transition: 0.3s 0.3s;
+}
+.card .overlay:target .arrow i {
+  color: white;
+  opacity: 100%;
+  position: absolute;
+  top: 47%;
+}
+.card .overlay:target .arrow .arrow-left,
+.card .overlay:target .arrow .arrow-right {
+  transform: scale(6);
+  transition: 0.3s 0.3s;
+}
+
+/* animasi */
+@keyframes zoom-fade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
